@@ -1,0 +1,25 @@
+Original source: SimpleCommandSigns
+http://gitorious.org/simplecommandsigns
+
+License: GPLv3
+
+
+This modification enables the plugin to react with redstone power.
+
+Three new options in config:
+- enableRedstoneSignal (bool)
+  If set to true it will register event needed for the redstone part to work)
+
+- disablePlayerOnSignal (bool)
+  If set to true a command sign must be powered by redstone for a user to successfully right-click
+
+- disableRedStoneCommand (bool)
+  If set to true it will not allow redstone signals to run commands
+
+So for example if you dont want to enable users running commands with redstone power (security risk etc), but you still want to control if they are allowed to use the signs (right-click):
+enableRedstoneSignal   = true
+disablePlayerOnSignal  = true
+disableRedStoneCommand = true
+
+
+USE THIS AT YOUR OWN RISK

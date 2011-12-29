@@ -1,0 +1,16 @@
+#
+# SimpleCommandSigns Configuration
+#
+
+# LWC Sign Automatic Locking
+#	If you have the LightWeight Chest plugin installed, you can
+#	have your command signs automatically protected after
+#	you have created them.
+autoSignLock=false
+
+# Command Sign Identifier String
+#	This is the line that if you place at the top of your sign will
+#	convert it into a command sign.
+#	Warning: Changing this after having placed command signs
+#	will disable previous signs.
+csActivator=[SCS]
