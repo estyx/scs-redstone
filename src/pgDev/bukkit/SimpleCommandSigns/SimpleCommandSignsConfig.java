@@ -18,7 +18,6 @@ public class SimpleCommandSignsConfig {
 	// List of Config Options
 	boolean signAutoLock;
 	public String commandSignIdentifier;
-	public String commandSignDisabled;
 	public Boolean enableRedstoneSignal;
 	public Boolean disablePlayerOnSignal;
 	public Boolean disableRedstoneCommand;
@@ -30,7 +29,6 @@ public class SimpleCommandSignsConfig {
         // Grab values here.
         signAutoLock = getBoolean("autoSignLock", false);
         commandSignIdentifier  = getString("csActivator", "[SCS]").trim();
-        commandSignDisabled    = getString("csDisabled",  "[SCSd]").trim();
         enableRedstoneSignal   = getBoolean("enableRedstoneSignal", false);
         disablePlayerOnSignal  = getBoolean("disablePlayerOnSignal", false);
         disableRedstoneCommand = getBoolean("disableRedstoneCommand", true);
@@ -169,7 +167,6 @@ public class SimpleCommandSignsConfig {
     		out.write("#	Warning: Changing this after having placed command signs\r\n");
     		out.write("#	will disable previous signs.\r\n");
     		out.write("csActivator=" + commandSignIdentifier + "\r\n");
-    		out.write("csDisable=" + commandSignDisabled + "\r\n");
     		out.write("enableRedstoneSignal=" + enableRedstoneSignal + "\r\n");
     		out.write("disablePlayerOnSignal=" + disablePlayerOnSignal + "\r\n");
     		out.write("disableRedstoneCommand=" + disableRedstoneCommand + "\r\n");

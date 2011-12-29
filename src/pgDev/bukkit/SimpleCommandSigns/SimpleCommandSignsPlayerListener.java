@@ -36,7 +36,7 @@ public class SimpleCommandSignsPlayerListener extends PlayerListener {
 	    		
 	    		Sign theSign = (Sign)event.getClickedBlock().getState();
 	    		
-	    		if (theSign.getLine(0).equals(ChatColor.GREEN + plugin.pluginSettings.commandSignIdentifier) ||(theSign.getLine(0).equals(ChatColor.GREEN + plugin.pluginSettings.commandSignDisabled) && plugin.pluginSettings.disablePlayerOnSignal == false )) {
+	    		if (theSign.getLine(0).equals(ChatColor.GREEN + plugin.pluginSettings.commandSignIdentifier) ||(theSign.getLine(0).equals(ChatColor.RED + plugin.pluginSettings.commandSignIdentifier) && plugin.pluginSettings.disablePlayerOnSignal == false )) {
 	    			if (plugin.debug) { // Some debug code
 	    				System.out.println("It was a CommandSign!");
 	        		}

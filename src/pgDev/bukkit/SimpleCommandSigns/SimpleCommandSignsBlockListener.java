@@ -58,10 +58,10 @@ public class SimpleCommandSignsBlockListener extends BlockListener {
     	
     	Sign signObject = (Sign) event.getBlock().getState();
     	
-    	if (!signObject.getLine(0).equals(ChatColor.GREEN + plugin.pluginSettings.commandSignIdentifier) && !signObject.getLine(0).equals(ChatColor.GREEN + plugin.pluginSettings.commandSignDisabled))
+    	if (!signObject.getLine(0).equals(ChatColor.GREEN + plugin.pluginSettings.commandSignIdentifier) && !signObject.getLine(0).equals(ChatColor.RED + plugin.pluginSettings.commandSignIdentifier))
     		return;
     	
-    	if ((event.getBlock().isBlockPowered() || event.getBlock().isBlockIndirectlyPowered()) && signObject.getLine(0).equals(ChatColor.GREEN + plugin.pluginSettings.commandSignDisabled))
+    	if ((event.getBlock().isBlockPowered() || event.getBlock().isBlockIndirectlyPowered()) && signObject.getLine(0).equals(ChatColor.RED + plugin.pluginSettings.commandSignIdentifier))
     	{
     		String dspCommand = signObject.getLine(1) + signObject.getLine(2) + signObject.getLine(3);
     		if(dspCommand.startsWith("/"))
@@ -71,9 +71,11 @@ public class SimpleCommandSignsBlockListener extends BlockListener {
     			this.plugin.getServer().dispatchCommand(this.plugin.getServer().getConsoleSender(), dspCommand);
 			
 			signObject.setLine(0, ChatColor.GREEN + plugin.pluginSettings.commandSignIdentifier);
+			signObject.update(true);
     	} else if(signObject.getLine(0).equals(ChatColor.GREEN + plugin.pluginSettings.commandSignIdentifier))
     	{
-    		signObject.setLine(0, ChatColor.GREEN + plugin.pluginSettings.commandSignDisabled);
+    		signObject.setLine(0, ChatColor.RED + plugin.pluginSettings.commandSignIdentifier);
+    		signObject.update(true);
     	}
 	}
     
