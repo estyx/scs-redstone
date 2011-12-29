@@ -21,5 +21,7 @@ enableRedstoneSignal   = true
 disablePlayerOnSignal  = true
 disableRedStoneCommand = true
 
+First line on the sign is green when enabled, red when disabled.
+
 
 USE THIS AT YOUR OWN RISK
